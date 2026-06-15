@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" uid="uid://bgmwplmj3bfls" path="res://scenes/globals/game_state/inventory/inventory_item.gd" id="1_abc12"]
+
+[resource]
+script = ExtResource("1_abc12")
+type = 2
+name = "Tabaco para el Muqui"
+metadata/_custom_type_script = "uid://bgmwplmj3bfls"

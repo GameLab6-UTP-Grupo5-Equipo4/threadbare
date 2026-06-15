@@ -1,0 +1,178 @@
+[gd_scene format=4 uid="uid://dgcscoacf8vpy"]
+
+[ext_resource type="TileSet" uid="uid://cvwq8kj2cnovs" path="res://scenes/quests/story_quests/voces_de_la_mina/tiles/lala_exterior_floors.tres" id="1_5ovv6"]
+[ext_resource type="Material" uid="uid://64aeyjitacv3" path="res://scenes/game_elements/props/void/void_chromakey_material.tres" id="2_5ovv6"]
+[ext_resource type="TileSet" uid="uid://dicbjjygilumk" path="res://scenes/quests/story_quests/voces_de_la_mina/tiles/lala_water.tres" id="3_5ovv6"]
+[ext_resource type="TileSet" uid="uid://ckykp5hax4hmq" path="res://scenes/quests/story_quests/voces_de_la_mina/tiles/lala_foam_2.tres" id="4_r3m43"]
+[ext_resource type="PackedScene" uid="uid://iu2q66clupc6" path="res://scenes/game_elements/characters/player/player.tscn" id="5_hmec8"]
+[ext_resource type="SpriteFrames" uid="uid://bbdqx1dnpdrrf" path="res://scenes/quests/story_quests/voces_de_la_mina/player_components/elena_player.tres" id="6_kx2td"]
+[ext_resource type="PackedScene" uid="uid://fuhl3l6gxq5k" path="res://scenes/game_elements/props/collectible_item/collectible_item.tscn" id="7_n4kgs"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/ofrendas/ofrenda_tabaco.tres" id="8_abc12"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/ofrendas/ofrenda_alcohol.tres" id="9_def34"]
+[ext_resource type="Resource" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/ofrendas/ofrenda_coca.tres" id="10_ghi56"]
+[ext_resource type="PackedScene" uid="uid://dt6ivbb8cfxnk" path="res://scenes/game_elements/props/lever/lever.tscn" id="11_ri4rx"]
+[ext_resource type="PackedScene" uid="uid://lgu7aeqa7o3r" path="res://scenes/game_elements/props/door/door.tscn" id="12_t3aaa"]
+[ext_resource type="PackedScene" uid="uid://covsdqqsd6rsy" path="res://scenes/game_elements/props/sign/sign.tscn" id="13_opy3e"]
+[ext_resource type="Script" uid="uid://dgj81p36f3a1o" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/scripts/elevator_exit.gd" id="14b_elev"]
+[ext_resource type="Script" uid="uid://ch7t6mjeouhbl" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/scripts/muqui_altar.gd" id="14_muqui"]
+[ext_resource type="Resource" uid="uid://iwulkhkatdbc" path="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/lala_minijuego2.dialogue" id="15_dialogue"]
+[ext_resource type="Script" uid="uid://x1mxt6bmei2o" path="res://scenes/ui_elements/cinematic/cinematic.gd" id="16_gltsx"]
+[ext_resource type="Script" uid="uid://bgmwplmj3bfls" path="res://scenes/globals/game_state/inventory/inventory_item.gd" id="16_w68pu"]
+[ext_resource type="PackedScene" uid="uid://cfcgrfvtn04yp" path="res://scenes/ui_elements/hud/hud.tscn" id="17_v8p8x"]
+[ext_resource type="Texture2D" uid="uid://boeaxk35yjpwl" path="res://scenes/game_elements/props/door/components/door_closed.png" id="18_doorc"]
+[ext_resource type="Texture2D" uid="uid://efo1k6ymgpuv" path="res://scenes/game_elements/props/door/components/door_opened.png" id="19_dooro"]
+[ext_resource type="Texture2D" uid="uid://b02l5o40jwr71" path="res://scenes/game_elements/props/buildings/temple/components/temple_a.png" id="20_temple"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muqui"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_paso"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elevator"]
+size = Vector2(80, 80)
+
+[node name="LalaMinijuego2" type="Node2D" unique_id=1845597573]
+y_sort_enabled = true
+
+[node name="TileMapLayers" type="Node2D" parent="." unique_id=463993027]
+
+[node name="Water" type="TileMapLayer" parent="TileMapLayers" unique_id=583742485]
+material = ExtResource("2_5ovv6")
+tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD6//r/AAAAAAAAAAD5//n/AAAAAAAAAAAUAPv/AAAAAAAAAAAVAPr/AAAAAAAAAAAWAPn/AAAAAAAAAAASAAwAAAAAAAAAAAATAA0AAAAAAAAAAAAUAA4AAAAAAAAAAAAVAA8AAAAAAAAAAAAWABAAAAAAAAAAAAD9/wwAAAAAAAAAAAD8/w0AAAAAAAAAAAD7/w4AAAAAAAAAAAD6/w8AAAAAAAAAAAD5/xAAAAAAAAAAAAD6/xAAAAAAAAAAAAD7/xAAAAAAAAAAAAD8/xAAAAAAAAAAAAD9/xAAAAAAAAAAAAD+/xAAAAAAAAAAAAD//xAAAAAAAAAAAAAAABAAAAAAAAAAAAABABAAAAAAAAAAAAACABAAAAAAAAAAAAADABAAAAAAAAAAAAAEABAAAAAAAAAAAAAFABAAAAAAAAAAAAAGABAAAAAAAAAAAAAHABAAAAAAAAAAAAAIABAAAAAAAAAAAAAJABAAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAAMABAAAAAAAAAAAAANABAAAAAAAAAAAAAOABAAAAAAAAAAAAAPABAAAAAAAAAAAAAQABAAAAAAAAAAAAARABAAAAAAAAAAAAASABAAAAAAAAAAAAATABAAAAAAAAAAAAAUABAAAAAAAAAAAAAVABAAAAAAAAAAAAAUAA8AAAAAAAAAAAATAA8AAAAAAAAAAAASAA8AAAAAAAAAAAARAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAAPAA8AAAAAAAAAAAAOAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAADAA8AAAAAAAAAAAACAA8AAAAAAAAAAAABAA8AAAAAAAAAAAAAAA8AAAAAAAAAAAD//w8AAAAAAAAAAAD+/w8AAAAAAAAAAAD9/w8AAAAAAAAAAAD8/w8AAAAAAAAAAAD7/w8AAAAAAAAAAAD5/w8AAAAAAAAAAAD8/w4AAAAAAAAAAAD9/w4AAAAAAAAAAAD+/w4AAAAAAAAAAAD//w4AAAAAAAAAAAAAAA4AAAAAAAAAAAABAA4AAAAAAAAAAAACAA4AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAAAAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAALAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAARAA4AAAAAAAAAAAASAA4AAAAAAAAAAAATAA4AAAAAAAAAAAASAA0AAAAAAAAAAAARAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAADAA0AAAAAAAAAAAACAA0AAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD+/w0AAAAAAAAAAAD9/w0AAAAAAAAAAAD+/wwAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAA=")
+tile_set = ExtResource("3_5ovv6")
+
+[node name="Foam" type="TileMapLayer" parent="TileMapLayers" unique_id=50381947]
+tile_map_data = PackedByteArray("AAACAAEAAgAAAAAAAAADAAEAAgAAAAAAAAAEAAEAAgAAAAAAAAAFAAEAAgAAAAAAAAAGAAEAAgAAAAAAAAAHAAEAAgAAAAAAAAAIAAEAAgAAAAAAAAAJAAEAAgAAAAAAAAAKAAEAAgAAAAAAAAALAAEAAgAAAAAAAAAMAAEAAgAAAAAAAAANAAIAAgAAAAAAAAANAAMAAgAAAAAAAAANAAQAAgAAAAAAAAANAAUAAgAAAAAAAAANAAYAAgAAAAAAAAANAAcAAgAAAAAAAAAMAAgAAgAAAAAAAAALAAgAAgAAAAAAAAAKAAgAAgAAAAAAAAAJAAgAAgAAAAAAAAAIAAgAAgAAAAAAAAAHAAgAAgAAAAAAAAAGAAgAAgAAAAAAAAAFAAgAAgAAAAAAAAAEAAgAAgAAAAAAAAADAAgAAgAAAAAAAAACAAgAAgAAAAAAAAABAAcAAgAAAAAAAAABAAYAAgAAAAAAAAABAAUAAgAAAAAAAAABAAQAAgAAAAAAAAABAAMAAgAAAAAAAAABAAIAAgAAAAAAAAA=")
+tile_set = ExtResource("4_r3m43")
+
+[node name="Grass" type="TileMapLayer" parent="TileMapLayers" unique_id=1859311904]
+tile_map_data = PackedByteArray("AAANAAcAAQACAAIAAAANAAYAAQACAAEAAAANAAUAAQACAAEAAAANAAQAAQACAAEAAAANAAMAAQACAAEAAAANAAIAAQACAAAAAAAMAAcAAQABAAEAAAAMAAYAAQABAAEAAAAMAAUAAQABAAEAAAAMAAQAAQABAAEAAAAMAAMAAQABAAEAAAAMAAIAAQABAAEAAAAMAAEAAQACAAAAAAALAAcAAQABAAEAAAALAAYAAQABAAEAAAALAAUAAQABAAEAAAALAAQAAQABAAEAAAALAAMAAQABAAEAAAALAAIAAQABAAEAAAALAAEAAQABAAAAAAAKAAcAAQABAAEAAAAKAAYAAQABAAEAAAAKAAUAAQABAAEAAAAKAAQAAQABAAEAAAAKAAMAAQABAAEAAAAKAAIAAQABAAEAAAAJAAcAAQABAAEAAAAJAAYAAQABAAEAAAAJAAUAAQABAAEAAAAJAAQAAQABAAEAAAAJAAMAAQABAAEAAAAJAAIAAQABAAEAAAAIAAcAAQABAAEAAAAIAAYAAQABAAEAAAAIAAUAAQABAAEAAAAIAAQAAQABAAEAAAAIAAMAAQABAAEAAAAIAAIAAQABAAEAAAAHAAcAAQABAAEAAAAHAAYAAQABAAEAAAAHAAUAAQABAAEAAAAHAAQAAQABAAEAAAAHAAMAAQABAAEAAAAHAAIAAQABAAEAAAAGAAcAAQABAAEAAAAGAAYAAQABAAEAAAAGAAUAAQABAAEAAAAGAAQAAQABAAEAAAAGAAMAAQABAAEAAAAGAAIAAQABAAEAAAAFAAcAAQABAAEAAAAFAAYAAQABAAEAAAAFAAUAAQABAAEAAAAFAAQAAQABAAEAAAAFAAMAAQABAAEAAAAFAAIAAQABAAEAAAAFAAEAAQABAAAAAAAEAAcAAQABAAEAAAAEAAYAAQABAAEAAAAEAAQAAQABAAEAAAAEAAMAAQABAAEAAAAEAAIAAQABAAEAAAAEAAEAAQABAAAAAAADAAQAAQABAAEAAAADAAMAAQABAAEAAAADAAIAAQABAAEAAAADAAEAAQABAAAAAAACAAMAAQABAAEAAAACAAIAAQABAAEAAAACAAEAAQAAAAAAAAABAAMAAQAAAAEAAAABAAIAAQAAAAAAAAACAAQAAQABAAEAAAABAAQAAQAAAAEAAAACAAgAAQAAAAIAAAADAAgAAQABAAIAAAAEAAgAAQABAAIAAAAFAAgAAQABAAIAAAAGAAgAAQABAAIAAAAHAAgAAQABAAIAAAAIAAgAAQABAAIAAAAJAAgAAQABAAIAAAAKAAgAAQABAAIAAAAMAAgAAQACAAIAAAALAAgAAQABAAIAAAABAAUAAQAAAAEAAAACAAUAAQABAAEAAAADAAUAAQABAAEAAAAEAAUAAQABAAEAAAADAAYAAQABAAEAAAACAAYAAQABAAEAAAABAAYAAQAAAAEAAAABAAcAAQAAAAIAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAAGAAEAAQABAAAAAAAHAAEAAQABAAAAAAAIAAEAAQABAAAAAAAJAAEAAQABAAAAAAAKAAEAAQABAAAAAAA=")
+tile_set = ExtResource("1_5ovv6")
+
+[node name="Sand" type="TileMapLayer" parent="TileMapLayers" unique_id=832672618]
+tile_map_data = PackedByteArray("AAACAAcAAQAFAAMAAAADAAcAAQAHAAIAAAADAAYAAQAIAAEAAAADAAUAAQAFAAAAAAAEAAUAAQAGAAMAAAAFAAUAAQAGAAMAAAAGAAUAAQAGAAMAAAAHAAUAAQAGAAMAAAAIAAUAAQAGAAMAAAAJAAUAAQAGAAMAAAAKAAUAAQAGAAMAAAALAAUAAQAHAAIAAAALAAQAAQAFAAAAAAAMAAQAAQAGAAMAAAANAAQAAQAHAAMAAAA=")
+tile_set = ExtResource("1_5ovv6")
+
+[node name="OnTheGround" type="Node2D" parent="." unique_id=752239395]
+y_sort_enabled = true
+
+[node name="Player" parent="OnTheGround" unique_id=2005592369 instance=ExtResource("5_hmec8")]
+position = Vector2(120, 440)
+sprite_frames = ExtResource("6_kx2td")
+
+[node name="Camera2D" type="Camera2D" parent="OnTheGround/Player" unique_id=1084855136]
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 960
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[node name="OfrendaTabaco" parent="OnTheGround" unique_id=1916461226 instance=ExtResource("7_n4kgs")]
+position = Vector2(300, 200)
+item = ExtResource("8_abc12")
+
+[node name="PalancaDrenaje1" parent="OnTheGround" unique_id=2037247655 instance=ExtResource("11_ri4rx")]
+position = Vector2(200, 350)
+
+[node name="Compuerta1" parent="OnTheGround" unique_id=1524444150 instance=ExtResource("12_t3aaa")]
+position = Vector2(450, 350)
+
+[node name="OfrendaAlcohol" parent="OnTheGround" unique_id=1729704105 instance=ExtResource("7_n4kgs")]
+position = Vector2(700, 200)
+item = ExtResource("9_def34")
+
+[node name="PalancaDrenaje2" parent="OnTheGround" unique_id=1553086041 instance=ExtResource("11_ri4rx")]
+position = Vector2(600, 500)
+
+[node name="Compuerta2" parent="OnTheGround" unique_id=816128556 instance=ExtResource("12_t3aaa")]
+position = Vector2(850, 500)
+
+[node name="OfrendaCoca" parent="OnTheGround" unique_id=1424370291 instance=ExtResource("7_n4kgs")]
+position = Vector2(1100, 300)
+item = ExtResource("10_ghi56")
+
+[node name="NotaCarlos1" parent="OnTheGround" unique_id=378541789 instance=ExtResource("13_opy3e")]
+position = Vector2(500, 650)
+text = "La contraseña del elevador... el día que papá me enseñó a usar la lámpara."
+
+[node name="NotaCarlos2" parent="OnTheGround" unique_id=2118364126 instance=ExtResource("13_opy3e")]
+position = Vector2(750, 750)
+text = "15 de agosto. Nunca lo olvidé."
+
+[node name="AltarMuqui" type="StaticBody2D" parent="OnTheGround" unique_id=996886943]
+position = Vector2(1000, 600)
+
+[node name="Sprite2D" type="Sprite2D" parent="OnTheGround/AltarMuqui" unique_id=1022890221]
+position = Vector2(0, -48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_temple")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/AltarMuqui" unique_id=900630943]
+shape = SubResource("RectangleShape2D_muqui")
+
+[node name="InteractArea" type="Area2D" parent="OnTheGround/AltarMuqui" unique_id=434102014]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("14_muqui")
+required_offerings = Array[ExtResource("16_w68pu")]([ExtResource("8_abc12"), ExtResource("9_def34"), ExtResource("10_ghi56")])
+offering_dialogue_titles = Array[StringName]([&"tabaco_delivered", &"alcohol_delivered", &"coca_delivered"])
+dialogue = ExtResource("15_dialogue")
+action = "Offer to Muqui"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/AltarMuqui/InteractArea" unique_id=1203337760]
+shape = SubResource("RectangleShape2D_muqui")
+
+[node name="BloqueoElevador" type="StaticBody2D" parent="OnTheGround" unique_id=1625630915]
+position = Vector2(1100, 850)
+
+[node name="Sprite2D" type="Sprite2D" parent="OnTheGround/BloqueoElevador" unique_id=1856232819]
+position = Vector2(0, -32)
+texture = ExtResource("18_doorc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/BloqueoElevador" unique_id=1556404094]
+shape = SubResource("RectangleShape2D_paso")
+
+[node name="Elevador" type="StaticBody2D" parent="OnTheGround" unique_id=418720456]
+position = Vector2(1100, 850)
+
+[node name="Sprite2D" type="Sprite2D" parent="OnTheGround/Elevador" unique_id=1962634521]
+position = Vector2(0, -32)
+texture = ExtResource("19_dooro")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/Elevador" unique_id=1494149286]
+shape = SubResource("RectangleShape2D_elevator")
+
+[node name="InteractArea" type="Area2D" parent="OnTheGround/Elevador" unique_id=1739844185]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("14b_elev")
+dialogue = ExtResource("15_dialogue")
+next_scene = "uid://dbbpvugd45qa6"
+blocked_passage = NodePath("OnTheGround/BloqueoElevador")
+action = "Use Elevator"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OnTheGround/Elevador/InteractArea" unique_id=957006309]
+shape = SubResource("RectangleShape2D_elevator")
+
+[node name="ScreenOverlay" type="CanvasLayer" parent="." unique_id=283102379]
+
+[node name="HUD" parent="." unique_id=659810473 instance=ExtResource("17_v8p8x")]
+
+[node name="Cinematic" type="Node2D" parent="." unique_id=1254548047]
+script = ExtResource("16_gltsx")
+dialogue = ExtResource("15_dialogue")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=545451178]
+position = Vector2(640, 480)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 960
+position_smoothing_enabled = true
+editor_draw_limits = true
+
+[connection signal="toggled" from="OnTheGround/PalancaDrenaje1" to="OnTheGround/Compuerta1" method="set_toggled"]
+[connection signal="toggled" from="OnTheGround/PalancaDrenaje2" to="OnTheGround/Compuerta2" method="set_toggled"]
+[connection signal="all_offerings_complete" from="OnTheGround/AltarMuqui/InteractArea" to="OnTheGround/BloqueoElevador" method="queue_free"]

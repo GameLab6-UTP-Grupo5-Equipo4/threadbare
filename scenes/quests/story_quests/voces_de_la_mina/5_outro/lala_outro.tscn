@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cvwq8kj2cnovs" path="res://scenes/quests/story_quests/voces_de_la_mina/tiles/lala_exterior_floors.tres" id="2_fa3pf"]
 [ext_resource type="SpriteFrames" uid="uid://bbdqx1dnpdrrf" path="res://scenes/quests/story_quests/voces_de_la_mina/player_components/lala_player.tres" id="3_ufv26"]
 [ext_resource type="Script" uid="uid://x1mxt6bmei2o" path="res://scenes/ui_elements/cinematic/cinematic.gd" id="4_ldx80"]
-[ext_resource type="Resource" uid="uid://bpvbuxxb3f81t" path="res://scenes/quests/story_quests/voces_de_la_mina/4_outro/outro_components/lala_outro.dialogue" id="5_h6pxm"]
+[ext_resource type="Resource" uid="uid://bpvbuxxb3f81t" path="res://scenes/quests/story_quests/voces_de_la_mina/5_outro/outro_components/lala_outro.dialogue" id="5_h6pxm"]
 [ext_resource type="Script" uid="uid://bdhjixygupit1" path="res://scenes/game_elements/props/area_filler/area_filler.gd" id="6_1yvbr"]
 [ext_resource type="PackedScene" uid="uid://7873qa54birk" path="res://scenes/game_elements/props/tree/tree.tscn" id="7_yhfol"]
 [ext_resource type="SpriteFrames" uid="uid://2ek86nvw6y28" path="res://scenes/game_elements/props/tree/components/tree_spriteframes_yellow.tres" id="8_tl5u6"]

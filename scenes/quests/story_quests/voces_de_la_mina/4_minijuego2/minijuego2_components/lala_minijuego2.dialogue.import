@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://iwulkhkatdbc"
+path="res://.godot/imported/lala_minijuego2.dialogue-0a8c6e756240b41f052f5ec0802a85f8.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/voces_de_la_mina/4_minijuego2/minijuego2_components/lala_minijuego2.dialogue"
+dest_files=["res://.godot/imported/lala_minijuego2.dialogue-0a8c6e756240b41f052f5ec0802a85f8.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: The Threadbare Authors
+# SPDX-License-Identifier: MPL-2.0
+
+~ start
+ELENA: (Esta cueva... hay algo diferente aquí.)
+ELENA: (El aire huele a alcohol y tabaco. ¿Ofrendas?)
+=> END
+
+~ need_offering
+MUQUI: *voz etérea* Quien entra en mi dominio debe respetar las viejas costumbres.
+ELENA: (¿Quién habla?)
+=> END
+
+~ tabaco_delivered
+MUQUI: El tabaco purifica el alma. Bien.
+MUQUI: Ahora, el alcohol. La bebida que olvidan los vivos.
+ELENA: (Está respondiendo a las ofrendas...)
+=> END
+
+~ alcohol_delivered
+MUQUI: Las lágrimas del aguardiente calientan los huesos fríos.
+MUQUI: Solo falta la coca. La hoja sagrada de los Andes.
+=> END
+
+~ coca_delivered
+MUQUI: Completa está tu ofrenda. El camino se abre, hija de la mina.
+MUQUI: Carlos te espera más allá. Pero cuidado... no todos los muertos descansan.
+ELENA: (El paso al elevador está desbloqueado...)
+=> END
+
+~ elevador_bloqueado
+ELENA: (El elevador está bloqueado. Necesito completar las ofrendas del Muqui primero.)
+=> END
+
+~ elevador_final
+ELENA: "Para bajar al corazón, la clave es el día que nos unió."
+ELENA: (¿El día que nos unió? ¿La fecha de nacimiento de Carlos? ¿O algo más?)
+ELENA: (No importa. Debo seguir adelante.)
+=> END

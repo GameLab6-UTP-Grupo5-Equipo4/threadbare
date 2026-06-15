@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bpvbuxxb3f81t"
+path="res://.godot/imported/lala_outro.dialogue-3a212652f2be852ca061ea3ce6c98a4d.tres"
+
+[deps]
+
+source_file="res://scenes/quests/story_quests/voces_de_la_mina/5_outro/outro_components/lala_outro.dialogue"
+dest_files=["res://.godot/imported/lala_outro.dialogue-3a212652f2be852ca061ea3ce6c98a4d.tres"]
+
+[params]
+
+defaults=true
